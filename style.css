@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
 }
+
 body {
   min-height: 100vh;
   display: flex;
@@ -11,17 +12,24 @@ body {
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #8052ec, #d161ff);
+  padding: 1rem;
 }
+
 .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 100%;
+  width: 100%;
 }
+
 h1 {
-  font-size: 4em;
+  font-size: 6vw;
   color: white;
   margin-bottom: 0.9em;
+  text-align: center;
 }
+
 .running-text {
   font-size: 1.5em;
   color: white;
@@ -32,18 +40,22 @@ h1 {
   width: 100%;
   text-align: center;
 }
+
 @keyframes slide {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
+
 .scoreboard {
   display: flex;
   justify-content: space-between;
-  width: 70vmin;
+  width: 90vw;
+  max-width: 500px;
   margin-bottom: 1em;
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
+
 select {
   font-size: 1em;
   padding: 0.5em;
@@ -51,35 +63,41 @@ select {
   border-radius: 8px;
   border: none;
 }
+
 .container {
-  width: 70vmin;
-  height: 70vmin;
+  width: 90vw;
+  max-width: 500px;
+  aspect-ratio: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 2vmin;
+  gap: 2%;
 }
+
 .button-option {
   background: #ffffff;
-  height: 22vmin;
-  width: 22vmin;
+  flex: 1 1 calc(33.333% - 1.5%);
+  aspect-ratio: 1;
   border: none;
   border-radius: 8px;
-  font-size: 12vmin;
+  font-size: calc(8vw + 1vmin);
   color: #d161ff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
 }
+
 .button-option:active {
   transform: scale(0.95);
   box-shadow: 0 0 25px rgba(209, 97, 255, 0.6);
 }
+
 .button-option.win {
   background-color: #4caf50 !important;
   color: white;
 }
+
 #restart {
-  font-size: 1.3em;
-  padding: 1em;
+  font-size: 1.2em;
+  padding: 1em 2em;
   border-radius: 8px;
   background-color: #0a0027;
   color: #ffffff;
@@ -87,6 +105,7 @@ select {
   margin-top: 1.5em;
   display: block;
 }
+
 .popup {
   background: linear-gradient(135deg, #8052ec, #d161ff);
   height: 100%;
@@ -98,21 +117,41 @@ select {
   justify-content: center;
   flex-direction: column;
   gap: 1em;
-  font-size: 12vmin;
+  font-size: 10vmin;
+  text-align: center;
+  padding: 1rem;
 }
+
 #new-game {
-  font-size: 0.6em;
-  padding: 0.5em 1em;
+  font-size: 1em;
+  padding: 0.7em 1.5em;
   background-color: #0a0027;
   color: #ffffff;
-  border-radius: 0.2em;
+  border-radius: 0.3em;
   border: none;
 }
+
 #message {
   color: #ffffff;
   text-align: center;
-  font-size: 1em;
+  font-size: 1.2em;
 }
+
 .popup.hide {
   display: none;
+}
+
+/* Media Queries for extra responsiveness */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  .scoreboard {
+    font-size: 1.5em;
+  }
+
+  .button-option {
+    font-size: 5vmin;
+  }
 }
